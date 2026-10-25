@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme {
+  --color-bg: #05070c;
+  --color-surface: #0b0f16;
+  --color-surface-2: #10151f;
+  --color-line: #1c2330;
+  --color-texto: #e8edf6;
+  --color-muted: #8b96a8;
+  --color-acento: #2dd4bf;
+  --color-acento-2: #818cf8;
+  --color-acento-3: #38bdf8;
+  --color-exito: #34d399;
+  --color-alerta: #fbbf24;
+  --color-peligro: #f87171;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(1200px 800px at 85% -10%, rgba(129, 140, 248, 0.14), transparent 60%),
+    radial-gradient(1000px 700px at -10% 12%, rgba(45, 212, 191, 0.12), transparent 55%),
+    var(--color-bg);
+  color: var(--color-texto);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--color-line);
+  backdrop-filter: blur(10px);
+}
+
+.texto-degradado {
+  background: linear-gradient(100deg, var(--color-acento-3), var(--color-acento) 45%, var(--color-acento-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.anim-fade-up {
+  animation: fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes scan {
+  0% { transform: translateY(-120%); }
+  100% { transform: translateY(520%); }
+}
+.scanner {
+  animation: scan 1.6s linear infinite;
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+.anim-glow {
+  animation: glow 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

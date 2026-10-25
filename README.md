@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Business X-Ray (ExplorerBusiness AI)
 
-## Getting Started
+Analiza la URL de una empresa y genera un informe visual de oportunidades de IA y
+automatización: Business Snapshot, AI Transformation Score, oportunidades, Automation
+Map, competidores, recomendaciones, matriz impacto/dificultad, roadmap, calculadora de
+ROI y top 3.
 
-First, run the development server:
+## Ejecutar en local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrí `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Analizar empresa:** pega una URL. El servidor extrae datos reales del HTML
+  (título, meta, formularios, contactos, tecnología, CTAs) y genera el análisis con un
+  motor determinístico. Cada dato muestra su procedencia: *Detectado* (real),
+  *Inferido* (estimación) o *DEMO*.
+- **Cargar ejemplo DEMO:** informe completo de una empresa ficticia, siempre disponible.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Datos reales vs demo
 
-## Learn More
+- **Real (sin claves):** scraping del HTML (nombre, descripción, formularios, WhatsApp,
+  teléfono/email, reservas, tecnología detectada, nivel de digitalización).
+- **Inferido (sin claves):** sector, propuesta de valor, cliente objetivo, puntuaciones,
+  oportunidades y recomendaciones. Se marcan como "Inferido".
+- **IA real (opcional):** si configurás una clave en `.env`, un LLM enriquece el análisis.
+- **Competidores:** solo con una API de búsqueda (`TAVILY_API_KEY`); si no, "no disponible".
 
-To learn more about Next.js, take a look at the following resources:
+## Conectar la IA real
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Copiá `.env.example` a `.env` y completá las claves (nunca se suben al repo).
+2. Reiniciá `npm run dev`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Variables soportadas: `ANTHROPIC_API_KEY` (Claude), o `OPENAI_COMPAT_*` (OpenRouter,
+OpenAI, DeepSeek, GLM, Qwen...), y `TAVILY_API_KEY` para competidores.
