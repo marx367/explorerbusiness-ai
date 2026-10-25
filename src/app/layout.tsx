@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Business X-Ray",
+  title: "Explorer Business AI",
   description:
     "Descubre en segundos cómo una empresa puede utilizar IA y automatización para vender más, ahorrar tiempo y mejorar sus procesos.",
 };

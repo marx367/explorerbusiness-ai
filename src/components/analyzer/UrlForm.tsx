@@ -40,7 +40,7 @@ export function UrlForm({
           className="anim-fade-up text-center text-5xl font-bold tracking-tight sm:text-7xl"
           style={{ animationDelay: "80ms" }}
         >
-          AI Business <span className="texto-degradado">X-Ray</span>
+          Explorer Business <span className="texto-degradado">AI</span>
         </h1>
 
         <p

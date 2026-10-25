@@ -1,4 +1,4 @@
-# AI Business X-Ray (ExplorerBusiness AI)
+# Explorer Business AI
 
 Analiza la URL de una empresa y genera un informe visual de oportunidades de IA y
 automatización: Business Snapshot, AI Transformation Score, oportunidades, Automation

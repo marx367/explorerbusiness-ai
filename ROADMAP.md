@@ -1,4 +1,4 @@
-# ROADMAP — ExplorerBusiness AI (AI Business X-Ray)
+# ROADMAP — Explorer Business AI
 
 > Última actualización: 2026-10-25 · Stack y estructura: ver `CLAUDE.md`
 

@@ -29,7 +29,7 @@ export function Reporte({
               <ScanLine className="h-4.5 w-4.5" />
             </span>
             <span className="font-semibold tracking-tight">
-              AI Business <span className="texto-degradado">X-Ray</span>
+              Explorer Business <span className="texto-degradado">AI</span>
             </span>
           </div>
           <button
@@ -86,7 +86,7 @@ export function Reporte({
       </main>
 
       <footer className="border-t border-line py-8 text-center text-xs text-muted">
-        AI Business X-Ray · Análisis con fines demostrativos. Las puntuaciones y
+        Explorer Business AI · Análisis con fines demostrativos. Las puntuaciones y
         recomendaciones son estimaciones.
       </footer>
     </div>
